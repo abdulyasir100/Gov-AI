@@ -11,12 +11,12 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <Header/>
-        <main>{children}</main>
-        <Footer/>
+        <Header />
+        <main className="mt-5">{children}</main> {/* Adds top margin */}
+        <Footer />
       </body>
     </html>
-  )
-}
+  );
+};
 
 export default RootLayout;

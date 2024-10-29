@@ -22,9 +22,9 @@ const Navbar = () => {
             <Image
                 src="/assets/images/logo.png"
                 alt="Logo"
-                width={200}
-                height={100}
-                className="w-auto h-auto max-h-12"
+                width={150}
+                height={70}
+                className="w-auto h-auto max-h-6"
             />
             </Link>
 
@@ -57,7 +57,7 @@ const Navbar = () => {
       </div>
       <div className={`${mobileMenuOpen ? 'block' : 'hidden'} md:hidden bg-blue-900`}>
         <ul className="pt-4 pb-3">
-          <NavItem href="/">Home</NavItem>
+          <NavItem href="/landing">Home</NavItem>
           <NavItem href="/dashboard">Dashboard</NavItem>
           <NavItem href="/products">Products</NavItem>
           <NavItem href="/risk-analysis">Risk Analysis</NavItem>
