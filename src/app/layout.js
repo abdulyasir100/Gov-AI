@@ -12,7 +12,7 @@ const RootLayout = ({ children }) => {
     <html lang="en">
       <body>
         <Header />
-        <main className="mt-5">{children}</main> {/* Adds top margin */}
+        <main className="mt-5">{children}</main>
         <Footer />
       </body>
     </html>

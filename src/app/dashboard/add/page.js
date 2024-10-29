@@ -1,7 +1,11 @@
-export default function AddDashboard(){
-    return(
-        <div>
-            <h1>AddDashboard</h1>
-        </div>
-    )
-}
+import DropSection from "@components/dashboard/drop-section";
+
+const AddDashboard = () => {
+  return (
+    <div className="container mx-auto p-4">
+       <DropSection />
+    </div>
+  );
+};
+
+export default AddDashboard;
