@@ -7,6 +7,11 @@ import BungaStat from "@components/risk-analysis/bunga-stat";
 import ValutaStat from "@components/risk-analysis/valuta-stat";
 import AiAdvice from "@components/risk-analysis/ai-advice";
 
+const metadata = {
+    title: "Gov-AI Risk Analysis",
+    description: "Gov-AI Risk Analysis",
+  }
+
 const RiskAnalysis = () => {
       return (
         <div className="container mx-auto p-4">

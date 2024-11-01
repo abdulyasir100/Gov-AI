@@ -1,0 +1,76 @@
+{
+    "currencies": [
+        {
+            "currency": "US Dollar",
+            "flagSrc": "/assets/images/flags/usa.png",
+            "predictions": [
+                { "label": "EoY", "amount": 16200, "change": 3.0 },
+                { "label": "EoM", "amount": 14950, "change": -0.8 },
+                { "label": "YoY", "amount": 15800, "change": 2.8 },
+                { "label": "MoM", "amount": 15300, "change": -1.0 }
+            ],
+            "graphData": [
+                { "month": "Januari", "value": 1300 },
+                { "month": "Februari", "value": 1600 },
+                { "month": "Maret", "value": 1750 },
+                { "month": "April", "value": 1450 },
+                { "month": "Mei", "value": 1550 },
+                { "month": "Juni", "value": 1650 },
+                { "month": "July", "value": 1750 },
+                { "month": "Agustus", "value": 1500 },
+                { "month": "September", "value": 1800 },
+                { "month": "Oktober", "value": 1550 },
+                { "month": "November", "value": 1700 },
+                { "month": "Desember", "value": 1900 }
+            ]
+        },
+        {
+            "currency": "JPY YEN",
+            "flagSrc": "/assets/images/flags/japan.png",
+            "predictions": [
+                { "label": "EoY", "amount": 17600, "change": 3.2 },
+                { "label": "EoM", "amount": 15250, "change": -1.1 },
+                { "label": "YoY", "amount": 16900, "change": 2.9 },
+                { "label": "MoM", "amount": 15600, "change": -0.6 }
+            ],
+            "graphData": [
+                { "month": "Januari", "value": 1450 },
+                { "month": "Februari", "value": 1550 },
+                { "month": "Maret", "value": 1850 },
+                { "month": "April", "value": 1400 },
+                { "month": "Mei", "value": 1500 },
+                { "month": "Juni", "value": 1650 },
+                { "month": "July", "value": 1750 },
+                { "month": "Agustus", "value": 1600 },
+                { "month": "September", "value": 1700 },
+                { "month": "Oktober", "value": 1800 },
+                { "month": "November", "value": 1900 },
+                { "month": "Desember", "value": 2000 }
+            ]
+        },
+        {
+            "currency": "Russian Ruble",
+            "flagSrc": "/assets/images/flags/russia.png",
+            "predictions": [
+                { "label": "EoY", "amount": 19200, "change": 4.2 },
+                { "label": "EoM", "amount": 15000, "change": -1.4 },
+                { "label": "YoY", "amount": 16500, "change": 3.5 },
+                { "label": "MoM", "amount": 13800, "change": -0.3 }
+            ],
+            "graphData": [
+                { "month": "Januari", "value": 1150 },
+                { "month": "Februari", "value": 1800 },
+                { "month": "Maret", "value": 1580 },
+                { "month": "April", "value": 1420 },
+                { "month": "Mei", "value": 1500 },
+                { "month": "Juni", "value": 1650 },
+                { "month": "July", "value": 1550 },
+                { "month": "Agustus", "value": 1600 },
+                { "month": "September", "value": 1700 },
+                { "month": "Oktober", "value": 1800 },
+                { "month": "November", "value": 1900 },
+                { "month": "Desember", "value": 2050 }
+            ]
+        }
+    ]
+}

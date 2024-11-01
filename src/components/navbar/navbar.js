@@ -30,11 +30,11 @@ const Navbar = () => {
 
           </div>
           <div className="hidden md:flex items-center space-x-1">
-            <NavItem href="/landing">Home</NavItem>
-            <NavItem href="/dashboard">Dashboard</NavItem>
-            <NavItem href="/products">Products</NavItem>
-            <NavItem href="/risk-analysis">Risk Analysis</NavItem>
-            <SignUpButton href="/sign-up"/>
+            <NavItem href="/landing" isDisabled={false}>Home</NavItem>
+            <NavItem href="/dashboard" isDisabled={true}>Dashboard</NavItem>
+            <NavItem href="/products" isDisabled={false}>Products</NavItem>
+            <NavItem href="/risk-analysis" isDisabled={false}>Risk Analysis</NavItem>
+            <SignUpButton isDisabled={true}/>
           </div>
           <div className="md:hidden flex items-center">
             <button 

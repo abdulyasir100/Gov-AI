@@ -3,6 +3,11 @@ import Asuransi from "@components/products/asuransi";
 import BungaBank from "@components/products/bunga-bank";
 import TradeFinance from "@components/products/trade-finance";
 
+const metadata = {
+    title: "Gov-AI Products",
+    description: "Gov-AI Products",
+  }
+
 const Products = () => {
       return (
         <div className="container mx-auto p-4">

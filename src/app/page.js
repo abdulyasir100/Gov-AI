@@ -1,8 +1,10 @@
+'use server'
+ 
+import { redirect } from 'next/navigation'
+ 
 const Landing = () => {
-  return(
-      <div>
-          <h1>Landing</h1>
-      </div>
+  return (
+    redirect(`/landing`)
   )
 }
 

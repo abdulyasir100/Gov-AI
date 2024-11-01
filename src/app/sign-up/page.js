@@ -1,4 +1,10 @@
 "use client";
+
+const metadata = {
+    title: "Gov-AI Risk Sign Up",
+    description: "Gov-AI Risk Up",
+  }
+
 const SignUp = () => {
     return (
         <div className="container mx-auto flex mt-24 justify-center p-4">
