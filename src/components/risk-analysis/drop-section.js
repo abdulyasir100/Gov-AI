@@ -9,10 +9,8 @@ const DropSection = () => {
   const [inputValue, setInputValue] = useState('');
 
   const dropdownCountries = [
-    { value: 'US', label: 'United States', image: "/assets/images/flags/usa.png" },
     { value: 'JP', label: 'Japan', image: "/assets/images/flags/japan.png" },
-    { value: 'RU', label: 'Russia', image: "/assets/images/flags/russia.png" },
-    { value: 'UK', label: 'Ukraine', image: "/assets/images/flags/ukraine.png" },
+    { value: 'PH', label: 'Philipines', image: "/assets/images/flags/philipines.png" },
   ];
 
   const dropdownMaterials = [

@@ -1,17 +1,21 @@
 "use client"
 import { useEffect, useState } from 'react';
 import ValutaContent from './valuta-content';
+import axios from 'axios';
 
 const Valuta = () => {
   const [currencies, setCurrencies] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('/temp/data/valuta.json');
-      const data = await response.json();
-      setCurrencies(data.currencies);
-      
+      try {
+        const response = await axios.get('/api/valuta');
+        setCurrencies(response.data.currencies);
+      } catch (error) {
+        console.error('Fetch error:', error);
+      }
     };
+
     fetchData();
   }, []);
 

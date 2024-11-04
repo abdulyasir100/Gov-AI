@@ -1,6 +1,10 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 
+const formatYAxisValue = (value) => {
+  return Math.round(value);
+};
+
 const ValutaContent = ({ flagSrc, currency, graphData, predictions }) => {
   return (
     <div className="bg-gray-300 p-4 rounded-md flex flex-col gap-2">
@@ -10,10 +14,10 @@ const ValutaContent = ({ flagSrc, currency, graphData, predictions }) => {
       </div>
 
       <div className="mb-2 flex justify-center items-center">
-        <div className="w-full max-w-md mx-auto pl-8">
+        <div className="w-full max-w-md mx-auto pl-6">
           <div className="flex justify-center">
             <LineChart
-              width={400} 
+              width={500} 
               height={250} 
               data={graphData} 
               className="scaled-chart" 
@@ -21,7 +25,10 @@ const ValutaContent = ({ flagSrc, currency, graphData, predictions }) => {
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" />
-              <YAxis />
+              <YAxis 
+                domain={[Math.min(...graphData.map(data => data.value)) - 100, Math.max(...graphData.map(data => data.value)) + 100]} 
+                tickFormatter={formatYAxisValue}
+              />
               <Tooltip />
               <Line type="monotone" dataKey="value" stroke="#8884d8" strokeWidth={3} />
             </LineChart>
