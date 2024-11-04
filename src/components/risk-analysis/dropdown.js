@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect, useRef } from "react";
 
-const Dropdown = ({ title, options, selectedOption, onChange, hasImages }) => {
+const Dropdown = ({ title, options, selectedOption, onChange, hasImages, error }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef();
 
@@ -24,10 +24,12 @@ const Dropdown = ({ title, options, selectedOption, onChange, hasImages }) => {
     <div className="relative" ref={dropdownRef}>
       <div className="mb-2 font-semibold text-lg text-gray-800">{title}</div>
       <div
-        className="flex items-center justify-between px-4 py-3 bg-white border border-gray-300 rounded-lg text-lg cursor-pointer"
+        className={`flex items-center justify-between px-4 py-3 bg-white border ${
+          error ? 'border-red-500' : 'border-gray-300'
+        } rounded-lg text-lg cursor-pointer`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-gray-700">
+        <span className={`${selectedOption ? 'text-gray-700' : 'text-gray-400'}`}>
           {selectedOption ? options.find((opt) => opt.value === selectedOption).label : "Select an option"}
         </span>
         <span className="ml-2 text-gray-500">&#9660;</span>
@@ -48,6 +50,7 @@ const Dropdown = ({ title, options, selectedOption, onChange, hasImages }) => {
           ))}
         </div>
       )}
+      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
     </div>
   );
 };
