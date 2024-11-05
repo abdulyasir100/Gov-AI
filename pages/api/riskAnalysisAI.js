@@ -1,9 +1,6 @@
 import axios from 'axios';
 
 export default async function handler(req, res) {
-    console.log('Request method:', req.method);
-    console.log('Request body:', req.body);
-
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
@@ -14,40 +11,32 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'Country is required' });
     }
 
-    let firstEndpoint = '';
-    let secondEndpoint = '';
-    let thirdEndpoint = '';
-
-    const base_url = "https://dlyforecast-62d3448d0853.herokuapp.com"
+    let politikEndpoint = '';
+    let ekonomiEndpoint = '';
+    let generalEndpoint = '';
 
     if (country === 'JP') {
-        firstEndpoint = '/politik_jp';
-        secondEndpoint = '/ekonomi_jp';
-        thirdEndpoint = '/general_jp';
+        politikEndpoint = process.env.NEXT_GOVAI_API_RISKAI_POLITIK_JP;
+        ekonomiEndpoint = process.env.NEXT_GOVAI_API_RISKAI_EKONOMI_JP;
+        generalEndpoint = process.env.NEXT_GOVAI_API_RISKAI_GENERAL_JP;
     } else if (country === 'PH') {
-        firstEndpoint = '/politik_ph';
-        secondEndpoint = '/ekonomi_ph';
-        thirdEndpoint = '/general_ph';
+        politikEndpoint = process.env.NEXT_GOVAI_API_RISKAI_POLITIK_PH;
+        ekonomiEndpoint = process.env.NEXT_GOVAI_API_RISKAI_EKONOMI_PH;
+        generalEndpoint = process.env.NEXT_GOVAI_API_RISKAI_GENERAL_PH;
     } else {
         return res.status(400).json({ error: 'Unsupported country' });
     }
 
     try {
         const [politikResponse, ekonomiResponse, generalResponse] = await Promise.all([
-            axios.get(base_url + firstEndpoint),
-            axios.get(base_url + secondEndpoint),
-            axios.get(base_url + thirdEndpoint)
+            axios.get(politikEndpoint),
+            axios.get(ekonomiEndpoint),
+            axios.get(generalEndpoint)
         ]);
 
         if (politikResponse.status !== 200 || ekonomiResponse.status !== 200 || generalResponse.status !== 200) {
             throw new Error('One or more network responses were not ok');
         }
-
-        const combinedData = {
-            politik: politikResponse.data,
-            ekonomi: ekonomiResponse.data,
-            general: generalResponse.data
-        };
 
         const result = {
             politik: { data: politikResponse.data.choices[0] },

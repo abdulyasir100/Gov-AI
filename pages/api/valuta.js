@@ -4,11 +4,12 @@ import path from 'path';
 
 export default async function handler(req, res) {
   try {
-    const responseUs = await axios.get('https://dlyforecast-62d3448d0853.herokuapp.com/forecast_us');
-    const responseJp = await axios.get('https://dlyforecast-62d3448d0853.herokuapp.com/forecast_jp');
-    const responsePh = await axios.get('https://dlyforecast-62d3448d0853.herokuapp.com/forecast_ph');
+    console.log(process.env.NEXT_GOVAI_API_VALUTA_US);
+    const responseUs = await axios.get(process.env.NEXT_GOVAI_API_VALUTA_US);
+    const responseJp = await axios.get(process.env.NEXT_GOVAI_API_VALUTA_JP);
+    const responsePh = await axios.get(process.env.NEXT_GOVAI_API_VALUTA_PH);
 
-    const currenciesDataPath = path.join(process.cwd(), 'public/temp/data/valuta.json');
+    const currenciesDataPath = path.join(process.cwd(), process.env.NEXT_GOVAI_JSON_VALUTA);
     const currenciesResponse = JSON.parse(fs.readFileSync(currenciesDataPath, 'utf-8'));
 
     currenciesResponse.currencies.forEach(currency => {

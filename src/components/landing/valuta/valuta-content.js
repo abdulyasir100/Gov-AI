@@ -1,11 +1,33 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const formatYAxisValue = (value) => {
   return Math.round(value);
 };
 
-const ValutaContent = ({ flagSrc, currency, graphData, predictions }) => {
+const ValutaContent = ({ flagSrc, currency, graphData, predictions, isLoading  }) => {
+
+  if (isLoading) {
+    return (
+      <div className="bg-gray-300 p-4 rounded-md flex flex-col gap-2">
+        <div className="flex items-center mb-2">
+          <Skeleton circle={true} height={40} width={40} className="mr-2 animate-pulse" />
+          <Skeleton width="50%" height={24} />
+        </div>
+        <Skeleton height={150} />
+        <h4 className="font-semibold text-gray-600 mb-1">
+          <Skeleton width="30%" />
+        </h4>
+        <div className="space-y-1">
+          <Skeleton width="40%" height={20} />
+          <Skeleton width="30%" height={20} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-gray-300 p-4 rounded-md flex flex-col gap-2">
       <div className="flex items-center mb-2">

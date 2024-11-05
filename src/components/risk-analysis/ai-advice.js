@@ -3,7 +3,9 @@ import SubAdvice from "./sub-advice";
 const AiAdvice = ({ content, subtitle}) => {
     return (
         <div className="mb-6">
-            <p className="font-bold text-lg mb-2">{content}</p>
+            <div className="bg-gray-300 p-4 rounded-lg mb-4">
+                <p className="text-justify text-lg mb-2">{content}</p>
+            </div>
             <h3 className="text-2xl font-bold mb-4">{subtitle}</h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <SubAdvice 

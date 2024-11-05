@@ -7,7 +7,7 @@ const metadata = {
 
 const SignUp = () => {
     return (
-        <div className="container mx-auto flex mt-24 justify-center p-4">
+        <div className="container mx-auto p-4 flex mt-24 justify-center">
             <div className="bg-gray-300 p-6 rounded-lg shadow-md w-full max-w-md">
                 <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">Sign Up</h2>
 

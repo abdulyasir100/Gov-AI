@@ -5,9 +5,9 @@ import Valuta from "@components/landing/valuta/valuta";
 import IndexPasar from "@components/landing/valuta/index-pasar";
 import Komoditas from "@components/landing/valuta/komoditas";
  
-const metadata = {
-  title: "Gov-AI Landing",
-  description: "Gov-AI Landing",
+export const metadata = {
+  title: "Gov-AI | Landing",
+  description: "Gov-AI | Landing",
 }
 
 const Landing = () => {

@@ -18,3 +18,8 @@ body {
   transform-origin: top left;
   max-width: 100%;
 }
+
+main {
+  min-height: 100vh; /* This will set the minimum height to the full height of the viewport */
+  overflow: auto; /* Ensures that if content exceeds the viewport, it will scroll */
+}
